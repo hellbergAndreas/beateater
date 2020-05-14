@@ -2,18 +2,52 @@ import React from "react"
 import { incrementTime } from "../../redux/time/time.actions"
 import { connect } from "react-redux"
 
-const TimeKeeper = ({ incrementTime, time: { time } }) => {
-  console.log(time)
-  const startTime = () => {
-    setInterval(() => {}, 1000)
-    incrementTime(time.time + 1)
-    console.log(time)
+class TimeKeeper extends React.Component {
+  constructor(props) {
+    super(props)
   }
-  return (
-    <div>
-      <button onClick={() => startTime()}>Start Time</button>
-    </div>
-  )
+  componentDidMount() {}
+
+  componentDidUpdate() {
+    this.theTimer("go")
+  }
+
+  theTimer = (action) => {
+    // destructuring props
+    let {
+      incrementTime,
+      time: { time },
+    } = this.props
+
+    if (action === "go") {
+      this.timer = setTimeout(() => {
+        if (time < 16) {
+          incrementTime(time + 1)
+        } else {
+          incrementTime(1)
+        }
+      }, 100)
+    } else if (action === "stop") {
+      clearInterval(this.timer)
+    }
+  }
+
+  stopTimer = () => {
+    console.log("hej")
+  }
+
+  startTimer = () => {
+    this.props.incrementTime(1)
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={() => this.startTimer()}>Start Time</button>
+        <button onClick={() => this.theTimer("stop")}>>stop</button>
+      </div>
+    )
+  }
 }
 
 const mapDispatchToProps = (dispatch) => ({
