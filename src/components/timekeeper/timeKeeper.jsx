@@ -2,10 +2,12 @@ import React from "react"
 import { incrementTime } from "../../redux/time/time.actions"
 import { connect } from "react-redux"
 
-const TimeKeeper = ({ incrementTime }) => {
+const TimeKeeper = ({ incrementTime, time: { time } }) => {
+  console.log(time)
   const startTime = () => {
     setInterval(() => {}, 1000)
-    incrementTime(5)
+    incrementTime(time.time + 1)
+    console.log(time)
   }
   return (
     <div>
@@ -17,7 +19,7 @@ const TimeKeeper = ({ incrementTime }) => {
 const mapDispatchToProps = (dispatch) => ({
   incrementTime: (time) => dispatch(incrementTime(time)),
 })
-const mapStateToProps = (state) => {
-  time: state.time
-}
+const mapStateToProps = (state) => ({
+  time: state.time,
+})
 export default connect(mapStateToProps, mapDispatchToProps)(TimeKeeper)
