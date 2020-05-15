@@ -1,0 +1,14 @@
+.time-display {
+  display: flex;
+  margin-bottom: 5px;
+  &__time-indicator {
+    height: 20px;
+    width: 20px;
+    background-color: grey;
+    margin-right: 10px;
+  }
+}
+
+.indicate-time {
+  background-color: white;
+}

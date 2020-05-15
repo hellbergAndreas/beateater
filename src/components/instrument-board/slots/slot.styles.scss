@@ -3,10 +3,19 @@
   width: 20px;
   background-color: rgb(103, 165, 128);
   margin-right: 10px;
+  &:first-of-type {
+    background-color: rgb(78, 128, 98);
+  }
+  &:nth-of-type(5) {
+    background-color: rgb(78, 128, 98);
+  }
+  &:nth-of-type(9) {
+    background-color: rgb(78, 128, 98);
+  }
+  &:nth-of-type(13) {
+    background-color: rgb(78, 128, 98);
+  }
 }
 .loaded {
-  background-color: rgb(173, 193, 181);
-}
-.active {
-  background-color: orange;
+  background-color: rgb(173, 193, 181) !important;
 }

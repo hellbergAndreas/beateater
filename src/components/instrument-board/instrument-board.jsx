@@ -1,12 +1,12 @@
 import React from "react"
 
-import BassDrum from "./instruments/bass-drum"
+import Instrument from "./instruments/Instrument-provider"
 
 import "./instrument-board.styles.scss"
 const instrumentBoard = () => {
   return (
     <div className="instrumentBoard">
-      <BassDrum></BassDrum>
+      <Instrument></Instrument>
     </div>
   )
 }
