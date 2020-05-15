@@ -3,9 +3,9 @@ import { incrementTime } from "../../redux/time/time.actions"
 import { connect } from "react-redux"
 
 class TimeKeeper extends React.Component {
-  constructor(props) {
-    super(props)
-  }
+  // constructor(props) {
+  //   super(props)
+  // }
   componentDidMount() {}
 
   componentDidUpdate() {
