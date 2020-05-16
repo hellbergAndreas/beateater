@@ -4,18 +4,20 @@ import TimeIndicator from "../../time-indicator/time-indicator"
 
 import bd from "../../../sounds/bd.mp3"
 import hh from "../../../sounds/hh.mp3"
-import snare from "../../../sounds/snare.mp3"
+import sn from "../../../sounds/sn.mp3"
+import ho from "../../../sounds/ho.mp3"
 
 class Instruments extends React.Component {
   constructor() {
     super()
     this.state = {
-      instruments: ["hh", "bd", "snare"],
+      instruments: ["hh", "ho", "sn", "bd"],
       slotNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
       sounds: {
         bd: bd,
         hh: hh,
-        snare: snare,
+        sn: sn,
+        ho: ho,
       },
     }
   }
@@ -24,7 +26,7 @@ class Instruments extends React.Component {
     return (
       <div>
         <div className="time-display">
-          HEJ
+          <div className="name"></div>
           {this.state.slotNumbers.map((number) => {
             return <TimeIndicator number={number} key={number}></TimeIndicator>
           })}
@@ -37,7 +39,7 @@ class Instruments extends React.Component {
               instrument={instrument}
               className={"instrumentBoard__slotRow " + instrument}
             >
-              HEJ
+              <div className="name">{instrument}</div>
               {this.state.slotNumbers.map((number) => (
                 <Slot
                   instrument={this.state.sounds[instrument]}
