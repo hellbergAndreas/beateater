@@ -42,5 +42,7 @@ $slotColorLoaded: radial-gradient(#ff6d6d, #ff0000);
 }
 
 .active.loaded {
-  background-color: green;
+  background: radial-gradient(#ffdfdf, #ff3209) !important;
+  filter: blur(1px);
+  box-shadow: 0 0 2px #231f1f;
 }

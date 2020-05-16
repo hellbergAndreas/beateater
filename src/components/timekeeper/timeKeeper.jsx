@@ -4,10 +4,19 @@ import { connect } from "react-redux"
 import "./timeKeeper.styles.scss"
 
 class TimeKeeper extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      timeGoes: false,
+    }
+  }
   componentDidMount() {}
 
   componentDidUpdate() {
-    this.theTimer("go")
+    if (this.state.timeGoes) {
+      this.theTimer("go")
+    }
   }
 
   theTimer = (action) => {
@@ -27,21 +36,37 @@ class TimeKeeper extends React.Component {
       }, 100)
     } else if (action === "stop") {
       clearInterval(this.timer)
+      this.setState((state) => {
+        return { timeGoes: !state.timeGoes }
+      })
     }
   }
 
   startTimer = () => {
     this.props.incrementTime(1)
+    this.setState((state) => {
+      return { timeGoes: !state.timeGoes }
+    })
   }
 
   render() {
     return (
       <div class="buttons">
-        <button class="buttons__button" onClick={() => this.startTimer()}>
-          Start
-        </button>
-        <button class="buttons__button" onClick={() => this.theTimer("stop")}>
-          Stop
+        <button
+          class={`buttons__button${
+            this.state.timeGoes ? " button-red" : " button-green"
+          }`}
+          onClick={() => {
+            if (!this.state.timeGoes) {
+              this.startTimer()
+            } else if (this.state.timeGoes) {
+              this.theTimer("stop")
+            }
+          }}
+        >
+          <div className="buttons__button__text">
+            {this.state.timeGoes ? "Stop" : "Go"}
+          </div>
         </button>
       </div>
     )

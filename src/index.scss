@@ -13,9 +13,13 @@
     &:hover {
       cursor: pointer;
     }
+    &__text {
+      font-size: larger;
+      font-weight: 700;
+    }
   }
 }
 
-.active .loaded {
+.active.loaded {
   background-color: orange;
 }
