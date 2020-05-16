@@ -1,0 +1,21 @@
+.buttons {
+  margin-top: 40px;
+  &__button {
+    background-color: black;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.2em;
+    height: 45px;
+    width: 120px;
+    margin: 10px;
+    color: white;
+    letter-spacing: 5px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.active .loaded {
+  background-color: orange;
+}

@@ -38,9 +38,15 @@ class Slot extends React.Component {
     return (
       <div
         onClick={(e) => this.loadSlotWithSound(e)}
-        className={`instrumentSlot ${
-          this.props.number === this.props.time.time ? "active" : ""
-        } ${this.state.loaded ? "loaded" : ""}`}
+        className={`instrumentBoard__slotRow__slot ${
+          this.props.number === this.props.time.time
+            ? "instrumentBoard__slotRow__slot__active active"
+            : ""
+        } ${
+          this.state.loaded
+            ? "instrumentBoard__slotRow__slot__loaded loaded"
+            : ""
+        }`}
       ></div>
     )
   }

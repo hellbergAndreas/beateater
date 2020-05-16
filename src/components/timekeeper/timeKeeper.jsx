@@ -1,6 +1,7 @@
 import React from "react"
 import { incrementTime } from "../../redux/time/time.actions"
 import { connect } from "react-redux"
+import "./timeKeeper.styles.scss"
 
 class TimeKeeper extends React.Component {
   componentDidMount() {}
@@ -29,19 +30,19 @@ class TimeKeeper extends React.Component {
     }
   }
 
-  stopTimer = () => {
-    console.log("hej")
-  }
-
   startTimer = () => {
     this.props.incrementTime(1)
   }
 
   render() {
     return (
-      <div>
-        <button onClick={() => this.startTimer()}>Start Time</button>
-        <button onClick={() => this.theTimer("stop")}>>stop</button>
+      <div class="buttons">
+        <button class="buttons__button" onClick={() => this.startTimer()}>
+          Start
+        </button>
+        <button class="buttons__button" onClick={() => this.theTimer("stop")}>
+          Stop
+        </button>
       </div>
     )
   }

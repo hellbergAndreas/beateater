@@ -4,11 +4,16 @@
   &__time-indicator {
     height: 50px;
     width: 50px;
-    background-color: grey;
+    background-color: rgba(172, 145, 39, 0.92);
     margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
 .indicate-time {
-  background-color: white;
+  background: radial-gradient(#f9ff8a, #fff700);
+  filter: blur(1px);
+  box-shadow: 0 0 5px #f7ff99;
 }

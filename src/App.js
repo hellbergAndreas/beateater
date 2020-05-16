@@ -8,7 +8,6 @@ import "./App.css"
 function App() {
   return (
     <div>
-      <TimeKeeper></TimeKeeper>
       <InstrumentBoard></InstrumentBoard>
     </div>
   )

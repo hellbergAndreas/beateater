@@ -1,27 +1,46 @@
-.instrumentSlot {
-  height: 50px;
-  width: 50px;
-  background-color: rgb(103, 165, 128);
-  margin-right: 10px;
-  &:nth-of-type(2) {
-    background-color: rgb(78, 128, 98);
-  }
-  &:nth-of-type(6) {
-    background-color: rgb(78, 128, 98);
-  }
-  &:nth-of-type(10) {
-    background-color: rgb(78, 128, 98);
-  }
-  &:nth-of-type(14) {
-    background-color: rgb(78, 128, 98);
+$slotColor: rgb(66, 56, 255);
+$slotColorDark: rgb(53, 45, 210);
+$slotColorLoaded: radial-gradient(#ff6d6d, #ff0000);
+.instrumentBoard {
+  &__slotRow {
+    &__slot {
+      height: 50px;
+      width: 50px;
+      background-color: $slotColor;
+      margin-right: 10px;
+      &__loaded {
+        &#{&} {
+          &#{&} {
+            background: radial-gradient(#ff8a8a, #ff0000);
+            filter: blur(1px);
+            box-shadow: 0 0 2px #231f1f;
+          }
+        }
+      }
+
+      &:nth-of-type(2) {
+        background-color: $slotColorDark;
+      }
+      &:nth-of-type(6) {
+        background-color: $slotColorDark;
+      }
+      &:nth-of-type(10) {
+        background-color: $slotColorDark;
+      }
+      &:nth-of-type(14) {
+        background-color: $slotColorDark;
+      }
+    }
   }
 }
-.loaded {
-  background-color: rgb(173, 193, 181) !important;
-}
+
 .name {
   width: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.active.loaded {
+  background-color: green;
 }

@@ -1,11 +1,17 @@
 .instrumentBoard {
   width: 1000px;
-  background-color: rgb(45, 45, 45);
+  background-color: rgb(40, 40, 40);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   padding: 50px 0px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
   &__slotRow {
     display: flex;
     margin-bottom: 10px;
   }
+}
+.logo {
+  margin-bottom: 30px;
 }
