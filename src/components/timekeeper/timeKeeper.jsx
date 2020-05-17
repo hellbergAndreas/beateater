@@ -11,7 +11,7 @@ class TimeKeeper extends React.Component {
       timeGoes: false,
     }
   }
-  componentDidMount() { }
+  componentDidMount() {}
 
   componentDidUpdate() {
     if (this.state.timeGoes) {
@@ -33,7 +33,7 @@ class TimeKeeper extends React.Component {
         } else {
           incrementTime(1)
         }
-      }, 100)
+      }, 125)
     } else if (action === "stop") {
       clearInterval(this.timer)
       this.setState((state) => {
@@ -51,11 +51,11 @@ class TimeKeeper extends React.Component {
 
   render() {
     return (
-      <div class="buttons">
+      <div className="buttons">
         <button
-          class={`buttons__button${
+          className={`buttons__button${
             this.state.timeGoes ? " button-red" : " button-green"
-            }`}
+          }`}
           onClick={() => {
             if (!this.state.timeGoes) {
               this.startTimer()

@@ -1,6 +1,6 @@
 $slotColor: rgb(66, 56, 255);
 $slotColorDark: rgb(53, 45, 210);
-$slotColorLoaded: radial-gradient(#ff6d6d, #ff0000);
+$slotColorLoaded: radial-gradient(#882e2e, #7a1818);
 .instrumentBoard {
   &__slotRow {
     &__slot {
@@ -11,7 +11,7 @@ $slotColorLoaded: radial-gradient(#ff6d6d, #ff0000);
       &__loaded {
         &#{&} {
           &#{&} {
-            background: radial-gradient(#ff8a8a, #ff0000);
+            background: $slotColorLoaded;
             filter: blur(1px);
             box-shadow: 0 0 2px #231f1f;
           }

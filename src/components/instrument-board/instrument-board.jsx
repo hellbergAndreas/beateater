@@ -7,7 +7,7 @@ import "./instrument-board.styles.scss"
 const instrumentBoard = () => {
   return (
     <div className="instrumentBoard">
-      <div class="logo">
+      <div className="logo">
         <h1>beatEater</h1>
       </div>
       <Instrument></Instrument>

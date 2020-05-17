@@ -1,5 +1,6 @@
 import React from "react"
 import { connect } from "react-redux"
+import { Howl, Howler } from "howler"
 import "./slot.styles.scss"
 
 class Slot extends React.Component {
@@ -24,9 +25,11 @@ class Slot extends React.Component {
   }
 
   playSound = () => {
-    let audioEl = new Audio(this.props.instrument)
-
-    audioEl.cloneNode(true).play()
+    const src = this.props.instrument
+    let audioEl = new Howl({
+      src,
+    })
+    audioEl.play()
   }
   loadSlotWithSound = (e) => {
     this.setState((state) => {
