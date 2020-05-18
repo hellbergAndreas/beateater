@@ -1,14 +1,17 @@
 import React from "react"
 import { connect } from "react-redux"
-import { Howl, Howler } from "howler"
+import { Howl } from "howler"
+import {
+  sendSlotInfoToStore,
+  removeSlotFromStore,
+} from "../../../redux/instrument-preset/isntrument.action"
+
 import "./slot.styles.scss"
 
 class Slot extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {
-      loaded: false,
-    }
+    this.slotNameInStore = `${this.props.name}${this.props.number}`
   }
   componentDidMount() {}
   componentDidUpdate() {
@@ -17,9 +20,7 @@ class Slot extends React.Component {
       time: { time },
     } = this.props
 
-    // if slotnumber === current time && has been clicked ( is loaded)
-    // we play the sounds
-    if (number === time && this.state.loaded) {
+    if (number === time && this.checkStoreForSlotInfo()) {
       this.playSound()
     }
   }
@@ -29,12 +30,33 @@ class Slot extends React.Component {
     let audioEl = new Howl({
       src,
     })
+    if (src.includes("/ho")) {
+      audioEl.volume(0.7)
+    } else if (src.includes("/hh")) {
+      audioEl.volume(0.5)
+    }
     audioEl.play()
   }
+
   loadSlotWithSound = (e) => {
-    this.setState((state) => {
-      return { loaded: !state.loaded }
-    })
+    let slotInfo = {
+      loaded: true,
+      instrument: this.props.name,
+      number: this.props.number,
+    }
+    if (!this.checkStoreForSlotInfo(slotInfo)) {
+      this.props.sendSlotInfoToStore(slotInfo)
+    } else {
+      this.props.removeSlotFromStore(this.slotNameInStore)
+    }
+  }
+
+  checkStoreForSlotInfo() {
+    if (!this.props.preset.preset[this.slotNameInStore]) {
+      return false
+    } else {
+      return true
+    }
   }
 
   render() {
@@ -45,11 +67,13 @@ class Slot extends React.Component {
           this.props.number === this.props.time.time
             ? "instrumentBoard__slotRow__slot__active active"
             : ""
-        } ${
-          this.state.loaded
+        }
+        ${
+          this.checkStoreForSlotInfo()
             ? "instrumentBoard__slotRow__slot__loaded loaded"
             : ""
-        }`}
+        }
+        `}
       ></div>
     )
   }
@@ -57,5 +81,10 @@ class Slot extends React.Component {
 
 const mapStateToProps = (state) => ({
   time: state.time,
+  preset: state.preset,
 })
-export default connect(mapStateToProps)(Slot)
+const mapDispatchToProps = (dispatch) => ({
+  sendSlotInfoToStore: (slotInfo) => dispatch(sendSlotInfoToStore(slotInfo)),
+  removeSlotFromStore: (slotName) => dispatch(removeSlotFromStore(slotName)),
+})
+export default connect(mapStateToProps, mapDispatchToProps)(Slot)
