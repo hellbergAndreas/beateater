@@ -10,4 +10,8 @@
   display: flex;
   justify-content: center;
   padding: 20px;
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
 }

@@ -19,6 +19,8 @@ const InstrumentPresetReducer = (state = INITIAL_STATE, action) => {
         ...state,
         preset: newPreset,
       }
+    case "SET_PRESET":
+      return action.payload
     default:
       return state
   }
