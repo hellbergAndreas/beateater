@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  time: 1,
+  time: 0,
 }
 
 const timeReducer = (state = INITIAL_STATE, action) => {

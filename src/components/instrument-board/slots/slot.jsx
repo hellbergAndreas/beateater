@@ -14,6 +14,13 @@ class Slot extends React.Component {
     this.slotNameInStore = `${this.props.name}${this.props.number}`
   }
   componentDidMount() {}
+  // shouldComponentUpdate(nextProp) {
+  //   if (this.props.preset.preset === nextProp.preset.preset) {
+  //     return true
+  //   } else {
+  //     return false
+  //   }
+  // }
   componentDidUpdate() {
     let {
       number,
@@ -21,8 +28,10 @@ class Slot extends React.Component {
     } = this.props
 
     if (number === time && this.checkStoreForSlotInfo()) {
+      console.log(number)
       this.playSound()
     }
+    console.log("im updating")
   }
 
   playSound = () => {
@@ -40,7 +49,6 @@ class Slot extends React.Component {
 
   loadSlotWithSound = (e) => {
     let slotInfo = {
-      loaded: true,
       instrument: this.props.name,
       number: this.props.number,
     }

@@ -36,6 +36,7 @@ class TimeKeeper extends React.Component {
       }, 100)
     } else if (action === "stop") {
       clearInterval(this.timer)
+      incrementTime(0)
       this.setState((state) => {
         return { timeGoes: !state.timeGoes }
       })

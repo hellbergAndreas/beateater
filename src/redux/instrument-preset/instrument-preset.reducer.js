@@ -1,5 +1,9 @@
 const INITIAL_STATE = {
-  preset: {},
+  preset: {
+    hh1: true,
+    hh4: true,
+    hh12: true,
+  },
 }
 
 const InstrumentPresetReducer = (state = INITIAL_STATE, action) => {
@@ -9,11 +13,7 @@ const InstrumentPresetReducer = (state = INITIAL_STATE, action) => {
         ...state,
         preset: {
           ...state.preset,
-          [`${action.payload.instrument}${action.payload.number}`]: {
-            slotNumber: action.payload.number,
-            instrument: action.payload.instrument,
-            loaded: action.payload.loaded,
-          },
+          [`${action.payload.instrument}${action.payload.number}`]: true,
         },
       }
     case "REMOVE_SLOT_INFO":
