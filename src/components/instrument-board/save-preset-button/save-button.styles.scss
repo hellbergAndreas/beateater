@@ -1,0 +1,15 @@
+.save-button {
+  height: 25px;
+  width: 100px;
+  margin-top: 20px;
+  border: none;
+  background: radial-gradient(#fff200, #ffd500);
+
+  box-shadow: 0 0 5px #ff4000;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    background: radial-gradient(#fff310, #c8a808);
+  }
+}

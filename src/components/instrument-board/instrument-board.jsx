@@ -2,6 +2,8 @@ import React from "react"
 
 import Instrument from "./instruments/Instrument-provider"
 import TimeKeeper from "../timekeeper/timeKeeper"
+import SaveButton from "./save-preset-button/save-button.component"
+import "./instrument-board.styles.scss"
 
 import "./instrument-board.styles.scss"
 const instrumentBoard = () => {
@@ -11,7 +13,10 @@ const instrumentBoard = () => {
         <h1>beatEater</h1>
       </div>
       <Instrument></Instrument>
-      <TimeKeeper></TimeKeeper>
+      <div className="instrumentBoard__board-buttons">
+        <TimeKeeper></TimeKeeper>
+        <SaveButton></SaveButton>
+      </div>
     </div>
   )
 }

@@ -1,9 +1,5 @@
 const INITIAL_STATE = {
-  preset: {
-    hh1: true,
-    hh4: true,
-    hh12: true,
-  },
+  preset: {},
 }
 
 const InstrumentPresetReducer = (state = INITIAL_STATE, action) => {

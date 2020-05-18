@@ -1,0 +1,13 @@
+.preset {
+  height: 100vh;
+  width: 350px;
+  background-color: black;
+  border: 1px solid white;
+  position: absolute;
+  z-index: 8;
+  right: 10px;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}

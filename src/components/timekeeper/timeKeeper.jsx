@@ -6,7 +6,6 @@ import "./timeKeeper.styles.scss"
 class TimeKeeper extends React.Component {
   constructor(props) {
     super(props)
-
     this.state = {
       timeGoes: false,
     }
@@ -52,7 +51,7 @@ class TimeKeeper extends React.Component {
 
   render() {
     return (
-      <div className="buttons">
+      <div>
         <button
           className={`buttons__button${
             this.state.timeGoes ? " button-red" : " button-green"

@@ -11,6 +11,11 @@
     display: flex;
     margin-bottom: 10px;
   }
+  &__board-buttons {
+    display: flex;
+    gap: 40px;
+    margin-left: 105px;
+  }
 }
 .logo {
   margin-bottom: 30px;
