@@ -1,11 +1,37 @@
-.button-green {
-  background: radial-gradient(#52923e, #0c750e);
+@import "../../variables.scss";
+.buttons {
+  margin-top: 30px;
+  &__button {
+    background: $boardColor;
+    border: none;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    margin-top: 40px;
+    color: #b79145;
+    box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+      2px 2px 6px rgba(0, 0, 0, 0.8);
+    outline: none;
 
-  box-shadow: 0 0 5px #06670d;
+    &:hover {
+      cursor: pointer;
+      box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+        2px 2px 6px rgba(0, 0, 0, 0.8),
+        inset -2px -2px 20px rgba(255, 255, 255, 0.05),
+        inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+    }
+    &__text {
+      font-size: larger;
+      font-weight: 700;
+    }
+  }
 }
 
 .button-red {
-  background: radial-gradient(#c22f2f, #780000);
-
-  box-shadow: 0 0 5px #560d0d;
+  color: rgb(181, 43, 15);
+  background: radial-gradient(#39030313, #3201011f) !important;
+  box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.8),
+    inset -2px -2px 20px rgba(255, 255, 255, 0.05),
+    inset 2px 2px 10px rgba(0, 0, 0, 0.5);
 }

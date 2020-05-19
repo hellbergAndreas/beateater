@@ -1,19 +1,36 @@
 $slotColor: rgb(66, 56, 255);
-$slotColorDark: rgb(53, 45, 210);
-$slotColorLoaded: radial-gradient(#882e2e, #7a1818);
+$slotColorDark: rgb(20, 20, 28);
+$slotColorLoaded: radial-gradient(#770000, rgb(28, 27, 33));
+$slotColorHover: radial-gradient(#491414, rgb(28, 27, 33));
+@import "../../../variables.scss";
+
 .instrumentBoard {
   &__slotRow {
     &__slot {
       height: 50px;
       width: 50px;
-      background-color: $slotColor;
+      background: $boardColor;
       margin-right: 10px;
+      border-radius: 3px;
+      cursor: pointer;
+
+      box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+        2px 2px 6px rgba(0, 0, 0, 0.8);
+      &:hover {
+        background: $slotColorHover;
+        box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+          2px 2px 6px rgba(0, 0, 0, 0.8),
+          inset -2px -2px 10px rgba(255, 255, 255, 0.08),
+          inset 2px 2px 10px rgba(0, 0, 0, 0.5);
+      }
       &__loaded {
         &#{&} {
           &#{&} {
             background: $slotColorLoaded;
-            filter: blur(1px);
-            box-shadow: 0 0 2px #231f1f;
+            box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+              2px 2px 6px rgba(0, 0, 0, 0.8),
+              inset -1px -1px 8px rgba(255, 255, 255, 0.1),
+              inset 2px 2px 8px rgba(0, 0, 0, 0.8);
           }
         }
       }
@@ -42,7 +59,7 @@ $slotColorLoaded: radial-gradient(#882e2e, #7a1818);
 }
 
 .active.loaded {
-  background: radial-gradient(#ffdfdf, #ff3209) !important;
+  background: radial-gradient(#f38c8ceb, #af0000) !important;
   filter: blur(1px);
   box-shadow: 0 0 2px #231f1f;
 }

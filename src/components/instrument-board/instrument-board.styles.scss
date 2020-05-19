@@ -1,6 +1,8 @@
+@import "../../variables.scss";
 .instrumentBoard {
+  color: #b79145;
   width: 1000px;
-  background-color: rgb(40, 40, 40);
+  background: $boardColor;
   display: flex;
   flex-direction: column;
   padding: 50px 0px;

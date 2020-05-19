@@ -27,8 +27,6 @@ class PresetMenu extends React.Component {
     })
   }
 
-  renderPresets = () => {}
-  componentDidUpdate() {}
   render() {
     return (
       <div className="preset">
