@@ -4,11 +4,14 @@
   &__time-indicator {
     height: 50px;
     width: 50px;
-    background-color: rgba(172, 145, 39, 0.92);
+    background-color: rgba(172, 146, 39, 0.738);
     margin-right: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 5px;
+    box-shadow: -3px -3px 4px rgba(130, 130, 75, 0.121),
+      1.5px 1.5px 4px rgba(0, 0, 0, 0.5), 1.5px 1.5px 5px rgba(0, 0, 0, 0.5);
   }
 }
 
