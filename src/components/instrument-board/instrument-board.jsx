@@ -9,13 +9,13 @@ import "./instrument-board.styles.scss"
 const instrumentBoard = () => {
   return (
     <div className="instrumentBoard">
+      <SaveButton></SaveButton>
       <div className="logo">
         <h1>beatEater</h1>
       </div>
       <Instrument></Instrument>
       <div className="instrumentBoard__board-buttons">
         <TimeKeeper></TimeKeeper>
-        <SaveButton></SaveButton>
       </div>
     </div>
   )

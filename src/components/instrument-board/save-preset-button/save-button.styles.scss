@@ -1,15 +1,19 @@
+@import "../../../variables.scss";
 .save-button {
+  background: $boardColor;
   height: 25px;
   width: 100px;
-  margin-top: 20px;
+  outline: none;
   border: none;
-  background: radial-gradient(#fff200, #ffd500);
+  color: #b79145;
+  box-shadow: -1px -1px 3px rgba(255, 255, 255, 0.1),
+    2px 2px 6px rgba(0, 0, 0, 0.8);
+  outline: none;
+  margin-left: 800px;
 
-  box-shadow: 0 0 5px #ff4000;
   &:hover {
     cursor: pointer;
   }
   &:active {
-    background: radial-gradient(#fff310, #c8a808);
   }
 }
