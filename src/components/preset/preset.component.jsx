@@ -13,7 +13,7 @@ class PresetMenu extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      hidde: false,
+      hidden: true,
       presets: [],
     }
   }
@@ -33,7 +33,9 @@ class PresetMenu extends React.Component {
     return (
       <div className="preset">
         <div className="preset__content">
-          <h2>Presets</h2>
+          <div className="preset__content__header">
+            <h2>Presets</h2>
+          </div>
           <div className="preset__content__list">
             {this.state.presets.map((preset, index) => {
               return (

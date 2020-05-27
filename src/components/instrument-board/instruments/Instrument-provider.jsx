@@ -6,12 +6,14 @@ import bd from "../../../sounds/bd.mp3"
 import hh from "../../../sounds/hh.mp3"
 import sn from "../../../sounds/sn.mp3"
 import ho from "../../../sounds/ho.mp3"
+import tom from "../../../sounds/tom.mp3"
+import clap from "../../../sounds/clap.mp3"
 
 class Instruments extends React.Component {
   constructor() {
     super()
     this.state = {
-      instruments: ["hh", "ho", "sn", "bd"],
+      instruments: ["hh", "ho", "sn", , "clap", "tom", "bd"],
 
       slotNumbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16],
       sounds: {
@@ -19,6 +21,8 @@ class Instruments extends React.Component {
         hh: hh,
         sn: sn,
         ho: ho,
+        tom: tom,
+        clap: clap,
       },
     }
   }
