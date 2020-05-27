@@ -53,7 +53,7 @@ class TimeKeeper extends React.Component {
     return (
       <div>
         <button
-          className={`buttons__button${
+          className={`buttons__button button${
             this.state.timeGoes ? " button-red" : " button-green"
           }`}
           onClick={() => {

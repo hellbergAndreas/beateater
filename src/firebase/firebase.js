@@ -37,10 +37,11 @@ export const addPreset = (collectionKey, preset) => {
 
   db.collection(collectionKey).doc(key).set({
     preset,
+    id: key,
   })
 }
 
-export const deleteTaskDocument = (collectionKey, key) => {
+export const deletePreset = (collectionKey, key) => {
   let stringKey = key.toString()
   db.collection(collectionKey).doc(stringKey).delete()
 }

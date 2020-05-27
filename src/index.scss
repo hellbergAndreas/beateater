@@ -2,8 +2,12 @@
 .active.loaded {
   background-color: orange;
 }
-
-button {
+@import "https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500&display=swap";
+$theFont: "Zilla Slab", serif;
+body {
+  font-family: $theFont;
+}
+.button {
   background: $boardColor;
   border: none;
 

@@ -4,6 +4,7 @@ import "./preset.styles.scss"
 import {
   converCollectionsSnapshotToMap,
   firestore,
+  deletePreset,
 } from "../../firebase/firebase"
 import { connect } from "react-redux"
 import { setPreset } from "../../redux/instrument-preset/isntrument.action"
@@ -12,6 +13,7 @@ class PresetMenu extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+      hidde: false,
       presets: [],
     }
   }
@@ -30,17 +32,23 @@ class PresetMenu extends React.Component {
   render() {
     return (
       <div className="preset">
-        Presets
-        <div className="preset__list">
-          {this.state.presets.map((preset, index) => {
-            return (
-              <div onClick={() => this.props.setPreset(preset)} key={index}>
-                Preset {index + 1}
-              </div>
-            )
-          })}
+        <div className="preset__content">
+          <h2>Presets</h2>
+          <div className="preset__content__list">
+            {this.state.presets.map((preset, index) => {
+              return (
+                <div className="preset__content__list__item">
+                  <h3 onClick={() => this.props.setPreset(preset)} key={index}>
+                    Preset {index + 1}
+                  </h3>
+                  <button onClick={() => deletePreset("presets", preset.id)}>
+                    x
+                  </button>
+                </div>
+              )
+            })}
+          </div>
         </div>
-        <div></div>
       </div>
     )
   }
